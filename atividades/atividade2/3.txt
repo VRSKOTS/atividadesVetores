@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+  float comprimento, largura;
+  printf("Digite as medidas da sala (comprimento e largura): ");
+  scanf("%f %f", &comprimento, &largura);
+
+  float area = comprimento * largura;
+
+  printf("A área da sala é %.2f metros quadrados\n", area);
+
+  return 0;
+}

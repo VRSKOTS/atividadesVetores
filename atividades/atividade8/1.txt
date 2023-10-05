@@ -1,0 +1,59 @@
+#include <stdio.h>
+
+int main() {
+    int idade, totalOtimo = 0, totalBom = 0, totalRegular = 0, totalRuim = 0, totalPessimo = 0;
+    int maiorIdadeOtimo = 0, maiorIdadeRuim = 0, idadeTotalRuim = 0;
+    char opiniao;
+
+    for (int i = 1; i <= 100; i++) {
+        printf("Dados do espectador %d:\n", i);
+        printf("Idade: ");
+        scanf("%d", &idade);
+        printf("Opinião (A/B/C/D/E): ");
+        scanf(" %c", &opiniao);
+
+        switch (opiniao) {
+            case 'A':
+                totalOtimo++;
+                if (idade > maiorIdadeOtimo) {
+                    maiorIdadeOtimo = idade;
+                }
+                break;
+            case 'B':
+                totalBom++;
+                break;
+            case 'C':
+                totalRegular++;
+                break;
+            case 'D':
+                totalRuim++;
+                idadeTotalRuim += idade;
+                if (idade > maiorIdadeRuim) {
+                    maiorIdadeRuim = idade;
+                }
+                break;
+            case 'E':
+                totalPessimo++;
+                if (idade > maiorIdadeRuim) {
+                    maiorIdadeRuim = idade;
+                }
+                break;
+            default:
+                printf("Opinião inválida. Use A, B, C, D ou E.\n");
+                i--; // Decrementa o contador para repetir a leitura deste espectador
+        }
+    }
+
+    float diferencaPercentual = (float)(totalBom - totalRegular) / totalBom * 100;
+    float mediaIdadeRuim = (float)idadeTotalRuim / totalRuim;
+    float percentualPessimo = (float)totalPessimo / 100 * 100;
+    int diferencaIdade = maiorIdadeOtimo - maiorIdadeRuim;
+
+    printf("Quantidade de respostas Ótimo: %d\n", totalOtimo);
+    printf("Diferença percentual entre respostas Bom e Regular: %.2f%%\n", diferencaPercentual);
+    printf("Média de idade das pessoas que responderam Ruim: %.2f\n", mediaIdadeRuim);
+    printf("Percentagem de respostas Péssimo: %.2f%%\n", percentualPessimo);
+    printf("Diferença de idade entre a maior idade que respondeu Ótimo e a maior idade que respondeu Ruim: %d\n", diferencaIdade);
+
+    return 0;
+}

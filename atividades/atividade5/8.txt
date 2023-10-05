@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+  int [idade](https://www.google.com/search?q=idade), [tempoDeServico](https://www.google.com/search?q=tempoDeServico);
+  printf("Digite a idade e o tempo de serviço do trabalhador: ");
+  scanf("%d %d", &[idade](https://www.google.com/search?q=idade), &[tempoDeServico](https://www.google.com/search?q=tempoDeServico));
+
+  if ([idade](https://www.google.com/search?q=idade) >= 65 || [tempoDeServico](https://www.google.com/search?q=tempoDeServico) >= 30 || ([idade](https://www.google.com/search?q=idade) >= 60 && [tempoDeServico](https://www.google.com/search?q=tempoDeServico) >= 25)) {
+    printf("O trabalhador pode se aposentar.\n");
+  } else {
+    printf("O trabalhador não pode se aposentar.\n");
+  }
+
+  return 0;
+}

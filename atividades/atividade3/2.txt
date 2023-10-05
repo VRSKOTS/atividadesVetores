@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+  float salario, salarioMinimo;
+  printf("Digite o salário: ");
+  scanf("%f", &salario);
+  printf("Digite o valor do salário mínimo: ");
+  scanf("%f", &salarioMinimo);
+
+  if (salario > salarioMinimo) {
+    printf("O salário é maior que o salário mínimo.\n");
+  } else {
+    printf("O salário é igual ou menor que o salário mínimo.\n");
+  }
+
+  return 0;
+}

@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+  float altura;
+  printf("Digite a altura: ");
+  scanf("%f", &altura);
+
+  if (altura > 1.8) {
+    printf("A altura é maior que 1.8m.\n");
+  } else {
+    printf("A altura é igual ou menor que 1.8m.\n");
+  }
+
+  return 0;
+}

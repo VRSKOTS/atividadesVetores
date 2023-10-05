@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+  float [nota1](https://www.google.com/search?q=nota1), [nota2](https://www.google.com/search?q=nota2), [nota3](https://www.google.com/search?q=nota3);
+  printf("Digite as notas das três provas: ");
+  scanf("%f %f %f", &[nota1](https://www.google.com/search?q=nota1), &[nota2](https://www.google.com/search?q=nota2), &[nota3](https://www.google.com/search?q=nota3));
+
+  float [media](https://www.google.com/search?q=media) = ([nota1](https://www.google.com/search?q=nota1) + [nota2](https://www.google.com/search?q=nota2) + ([nota3](https://www.google.com/search?q=nota3) * 2)) / 4;
+
+  printf("A média do aluno é: %.2f\n", [media](https://www.google.com/search?q=media));
+
+  if ([media](https://www.google.com/search?q=media) >= 7.0) {
+    printf("O aluno foi aprovado.\n");
+  } else {
+    printf("O aluno foi reprovado.\n");
+  }
+
+  return 0;
+}

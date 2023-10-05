@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+  int [numero](https://www.google.com/search?q=numero);
+  printf("Digite um número inteiro: ");
+  scanf("%d", &[numero](https://www.google.com/search?q=numero));
+
+  if ([numero](https://www.google.com/search?q=numero) % 2 == 0) {
+    printf("O número é par.\n");
+  }
+
+  return 0;
+}

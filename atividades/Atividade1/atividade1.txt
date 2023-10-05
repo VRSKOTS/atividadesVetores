@@ -1,0 +1,60 @@
+#include <stdio.h>
+
+#define MAX_DISCIPLINAS 5
+
+struct Cadastro {
+  char nome[50];
+  int idade;
+  int matricula;
+  char endereco[100];
+  char curso[50];
+  int periodo;
+  char disciplinas[MAX_DISCIPLINAS][50];
+};
+
+int main() {
+  struct Cadastro aluno;
+
+  printf("Cadastro de Aluno\n\n");
+
+  printf("Nome: ");
+  fgets(aluno.nome, sizeof(aluno.nome), stdin);
+
+  printf("Idade: ");
+  scanf("%d", &aluno.idade);
+
+  printf("Matrícula: ");
+  scanf("%d", &aluno.matricula);
+
+  printf("Endereço: ");
+  fflush(stdin); // Limpa o buffer do teclado
+  fgets(aluno.endereco, sizeof(aluno.endereco), stdin);
+
+  printf("Curso: ");
+  fflush(stdin);
+  fgets(aluno.curso, sizeof(aluno.curso), stdin);
+
+  printf("Período: ");
+  scanf("%d", &aluno.periodo);
+
+  printf("Disciplinas:\n");
+  for (int i = 0; i < MAX_DISCIPLINAS; i++) {
+    printf("Disciplina %d: ", i + 1);
+    fflush(stdin);
+    fgets(aluno.disciplinas[i], sizeof(aluno.disciplinas[i]), stdin);
+  }
+
+  printf("\nInformações do Cadastro:\n");
+  printf("Nome: %s", aluno.nome);
+  printf("Idade: %d\n", aluno.idade);
+  printf("Matrícula: %d\n", aluno.matricula);
+  printf("Endereço: %s", aluno.endereco);
+  printf("Curso: %s", aluno.curso);
+  printf("Período: %d\n", aluno.periodo);
+  printf("Disciplinas:\n");
+  for (int i = 0; i < MAX_DISCIPLINAS; i++) {
+    printf("Disciplina %d: %s", i + 1, aluno.disciplinas[i]);
+  }
+
+  return 0;
+}

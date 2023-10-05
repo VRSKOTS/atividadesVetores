@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    int vetor[6] = {1, 0, 5, -2, -5, 7};
+    
+    // b) Soma entre os valores das posições 0, 1 e 5 do vetor
+    int soma = vetor[0] + vetor[1] + vetor[5];
+    printf("Soma: %d\n", soma);
+    
+    // c) Modificando o valor na posição 4 do vetor
+    vetor[4] = 100;
+    
+    // d) Mostrando cada valor do vetor em uma linha
+    for (int i = 0; i < 6; i++) {
+        printf("%d\n", vetor[i]);
+    }
+    
+    return 0;
+}

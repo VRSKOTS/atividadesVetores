@@ -1,0 +1,77 @@
+#include <stdio.h>
+
+int main() {
+    char elevador, periodo;
+    int usoA = 0, usoB = 0, usoC = 0;
+    int matutino = 0, vespertino = 0, noturno = 0;
+    int totalServicos = 0;
+
+    for (int i = 1; i <= 50; i++) {
+        printf("Dados do morador %d:\n", i);
+        printf("Elevador mais frequentado (A/B/C): ");
+        scanf(" %c", &elevador);
+        printf("Período mais usado (M/V/N): ");
+        scanf(" %c", &periodo);
+
+        switch (elevador) {
+            case 'A':
+                usoA++;
+                break;
+            case 'B':
+                usoB++;
+                break;
+            case 'C':
+                usoC++;
+                break;
+            default:
+                printf("Opção de elevador inválida. Use A, B ou C.\n");
+                i--; // Decrementa o contador para repetir a leitura deste morador
+        }
+
+        switch (periodo) {
+            case 'M':
+                matutino++;
+                break;
+            case 'V':
+                vespertino++;
+                break;
+            case 'N':
+                noturno++;
+                break;
+            default:
+                printf("Opção de período inválida. Use M, V ou N.\n");
+                i--; // Decrementa o contador para repetir a leitura deste morador
+        }
+
+        totalServicos++;
+    }
+
+    char periodoMaisUsado;
+    if (matutino >= vespertino && matutino >= noturno) {
+        periodoMaisUsado = 'M';
+    } else if (vespertino >= matutino && vespertino >= noturno) {
+        periodoMaisUsado = 'V';
+    } else {
+        periodoMaisUsado = 'N';
+    }
+
+    char elevadorMaisFrequentado;
+    int maiorFluxo = usoA;
+    if (usoB > maiorFluxo) {
+        elevadorMaisFrequentado = 'B';
+        maiorFluxo = usoB;
+    }
+    if (usoC > maiorFluxo) {
+        elevadorMaisFrequentado = 'C';
+    }
+
+    float diferencaPercentual = ((float)maiorFluxo - menorFluxo) / maiorFluxo * 100;
+    float percentagemElevadorMedio = (float)(totalServicos - maiorFluxo) / totalServicos * 100;
+
+    printf("Período mais usado: %c (pertence ao elevador %c)\n", periodoMaisUsado, elevadorMaisFrequentado);
+    printf("Elevador mais frequentado: %c (concentra-se no período %c)\n", elevadorMaisFrequentado, periodoMaisUsado);
+    printf("Diferença percentual entre o mais usado e o menos usado: %.2f%%\n", diferencaPercentual);
+    printf("Percentagem sobre o total de serviços do elevador de média utilização: %.2f%%\n", percentagemElevadorMedio);
+
+    return 0;
+}

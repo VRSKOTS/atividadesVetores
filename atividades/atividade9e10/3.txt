@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    float vetorOriginal[10];
+    float vetorQuadrados[10];
+    
+    printf("Digite 10 números reais:\n");
+    for (int i = 0; i < 10; i++) {
+        scanf("%f", &vetorOriginal[i]);
+        vetorQuadrados[i] = vetorOriginal[i] * vetorOriginal[i];
+    }
+    
+    printf("Vetor Original:\n");
+    for (int i = 0; i < 10; i++) {
+        printf("%.2f ", vetorOriginal[i]);
+    }
+    
+    printf("\nVetor dos Quadrados:\n");
+    for (int i = 0; i < 10; i++) {
+        printf("%.2f ", vetorQuadrados[i]);
+    }
+    
+    return 0;
+}
