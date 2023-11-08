@@ -1,0 +1,61 @@
+#include <stdio.h>
+
+// Declaração dos subalgoritmos
+int validaQuantidade(int quantidadePecas);
+float calculaSalario(int quantidadePecas);
+void mostraFinal(int funcionarios, float salarios[]);
+
+// função principal
+int main() {
+    int funcionarios;
+    printf("Digite o número de funcionários: ");
+    scanf("%d", &funcionarios);
+
+    float salarios[funcionarios];
+
+    for (int i = 0; i < funcionarios; i++) {
+        int quantidadePecas;
+        printf("Digite a quantidade de peças fabricadas pelo funcionário %d: ", i + 1);
+        scanf("%d", &quantidadePecas);
+
+        // quantidade de peças
+        if (validaQuantidade(quantidadePecas)) {
+            salarios[i] = 600 + calculaSalario(quantidadePecas);
+        } else {
+            salarios[i] = 600;
+        }
+    }
+
+    // mostrando os resultados
+    mostraFinal(funcionarios, salarios);
+
+    return 0;
+}
+
+// validar a quantidade de peças
+int validaQuantidade(int quantidadePecas) {
+    if (quantidadePecas >= 0) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+// calcular o salário
+float calculaSalario(int quantidadePecas) {
+    float adicional = 0;
+    if (quantidadePecas > 80) {
+        adicional = (quantidadePecas - 80) * 0.75 + 30 * 0.5;
+    } else if (quantidadePecas > 50) {
+        adicional = (quantidadePecas - 50) * 0.5;
+    }
+    return adicional;
+}
+
+// mostrar o resultado final
+void mostraFinal(int funcionarios, float salarios[]) {
+    printf("Salários dos funcionários: \n");
+    for (int i = 0; i < funcionarios; i++) {
+        printf("Funcionário %d: R$ %.2f\n", i + 1, salarios[i]);
+    }
+}
